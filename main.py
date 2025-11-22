@@ -1,5 +1,5 @@
 from telegram import Update, InlineKeyboardButton, InlineKeyboardMarkup
-from telegram.ext import ApplicationBuilder, CommandHandler, ContextTypes
+from telegram.ext import Application, CommandHandler, ContextTypes
 
 # Ton token Telegram
 TOKEN = "8532082529:AAHCiDhoHsPzp43m5tX4fPsZFFwRqeRTTAw"
@@ -20,7 +20,7 @@ async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
     )
 
 # Création de l'application
-app = ApplicationBuilder().token(TOKEN).build()
+app = Application.builder().token(TOKEN).build()
 
 # Ajout du handler pour /start
 app.add_handler(CommandHandler("start", start))
